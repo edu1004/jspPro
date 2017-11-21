@@ -1,0 +1,31 @@
+===cmd=========================
+C:\Users\Administrator>sqlplus
+Enter user-name: system
+Enter password:hi12346
+
+SQL> create user admin identified by hi123456 account unlock;
+
+SQL> grant connect, resource to admin;
+
+SQL> conn admin/hi123456
+Connected.
+============================================
+create table menu(
+num number primary key,
+menu varchar2(20) not null,
+price number not null,
+store varchar2(20) not null,
+kcal number not null
+);
+drop table menu;
+============================================
+create sequence seq_menu_num;
+drop sequence seq_menu_num;
+============================================
+
+insert into menu(num,menu,price,store,kcal) values(seq_menu_num.nextval,'kimchechige',6000,'chigezip',500);
+
+select * from menu order by num desc;
+
+select * from menu where num=4;
+
